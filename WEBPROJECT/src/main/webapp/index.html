@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        background-image: url('courier3.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header"
+            "content"
+            "footer";
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background for better visibility */
+        padding: 10px 20px;
+    }
+
+    .logo {
+        height: 70px; /* Adjust the height as needed */
+    }
+
+    .nav-menu {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 5px;
+        margin: 0;
+        display: flex;
+        position: relative;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 10px;
+        position: relative;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white; /* Changed to white for better contrast */
+        font-size: 17px;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        background-color: black;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {
+        background-color: powderblue;
+    }
+
+    nav ul li:hover .dropdown-content {
+        display: block;
+    }
+
+    .nav-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .nav-buttons button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    
+    a:link {
+        color: white;
+        padding: 5px 5px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    #link {
+        color: white;    
+        margin-left: 20px; /* Adding margin to create a gap */
+    }
+    
+   h5{
+    color: white; 
+   } 
+
+    .footer {
+        background: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background for better visibility */
+        padding: 10px 0;
+        text-align: center;
+        grid-area: footer;
+    }
+
+    .footer-links a {
+        
+        margin: 0 10px;
+        text-decoration: none;
+        text-align:center;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+    <header style="grid-area: header;">
+        <nav>
+            <img src="log05.png" alt="Logo" class="logo">
+            <div class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">Home</a>
+                        <div class="dropdown-content">
+                            <a href="AddProduct">Product</a>
+                            <a href="AddCustomerForm">Customer</a>
+                            <a href="AddOrderForm">Order</a>
+                            <a href="AddPaymentForm">Payment</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Services</a>
+                        <div class="dropdown-content">
+                            <a href="AddDeliveryDetailsForm">Delivery Details</a>
+                            <a href="Reviews.html">Reviews</a>
+                        </div>
+                    </li>
+                    <li><a href="company.html">Company</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                    <li><a href="AboutUs.html">About</a></li>
+                </ul>
+            </div>
+            <div class="nav-buttons">
+                <a href="LoginForm" id="link">Login</a>
+                <a href="SignupForm" id="link">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main style="grid-area: content;">
+        
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <h5>© 2024 All rights reserved. Ecom Express Limited</h5>
+        </div>
+    </footer>
+
+<script>
+    window.onclick = function(event) {
+        if (!event.target.matches('.nav-menu a')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === 'block') {
+                    openDropdown.style.display = 'none';
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
